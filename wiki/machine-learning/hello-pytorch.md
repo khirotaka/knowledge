@@ -151,17 +151,31 @@ cpu + gpu # <- Errorが起こる
 GPUが管理するメモリ上にあるデータをCPUが管理するメモリー上に移すには
 
 ```text
-gpu.cpu()
+x = torch.tensor(...)
+x = x.cpu()
 ```
 
 CPUが管理するメモリ上にあるデータをGPUが管理するメモリ上に移すには
 
 ```python
-cpu.cuda()
+x = torch.tensor(...)
+x = x.cuda()
 ```
 
 を実行します。
+
+また、GPUが実行可能なら自動的に変数をGPUに載せていきたいのなら
+
+```python
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+x = torch.tensor(...)
+x = x.to(device)
+```
+
+とすれば、OKです。
 {% endhint %}
+
+
 
 `一通り`PyTorch`の使い方を学んだので次から早速ニューラルネットを実装してみましょう`
 
