@@ -48,7 +48,9 @@ print("dz/dx = ", x.grad.numpy())    # <- dz/dx = 2
 
 当然、偏微分だって出来ます。 
 
-$$z = x^2y + 3xy^5 + x^3 \\ \frac{\partial z}{\partial x} = 2xy + 3y^5 + 3x^2 \\ \frac{\partial z}{\partial y} = x^2 + 15xy^4$$
+$$
+z = x^2y + 3xy^5 + x^3 \\ \frac{\partial z}{\partial x} = 2xy + 3y^5 + 3x^2 \\ \frac{\partial z}{\partial y} = x^2 + 15xy^4
+$$
 
 ```python
 x = torch.tensor(1.0, requires_grad=True)
@@ -67,9 +69,11 @@ print("dz/dy = {}".format(y.grad))
 
 ニューラルネットの学習には最適化の計算が必須です。 当然、PyTorchにも様々な最適化アルゴリズムが実装されています。
 
-例えば、この式の最小値を求めてみましょう。  
-  
-$$y = 3x^2 + 6x - 9 $$
+例えば、この式の最小値を求めてみましょう。
+
+$$
+y = 3x^2 + 6x - 9
+$$
 
 ```python
 import torch.optim as optim
@@ -102,7 +106,7 @@ plt.show()
 
 PyTorchで、どうやってGPUを使うかを見ていきましょう。  
 まずは、CPUで行列の積を求めてみます。  
-そもそも、行列積の計算は オーダ $$O\(n^3\)$$ です。 愚直にCPUでやると遅い。
+そもそも、行列積の計算は オーダ $O\(n^3\) $ です。 愚直にCPUでやると遅い。
 
 ```python
 import time
@@ -143,7 +147,25 @@ cpu + gpu # <- Errorが起こる
 
 ```
 
+{% hint style="info" %}
+GPUが管理するメモリ上にあるデータをCPUが管理するメモリー上に移すには
+
+```text
+gpu.cpu()
+```
+
+CPUが管理するメモリ上にあるデータをGPUが管理するメモリ上に移すには
+
+```python
+cpu.cuda()
+```
+
+を実行します。
+{% endhint %}
+
 `一通り`PyTorch`の使い方を学んだので次から早速ニューラルネットを実装してみましょう`
+
+\`\`
 
 \`\`
 
