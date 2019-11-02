@@ -1,5 +1,5 @@
 ---
-description: PyTorchによるニューラルネット 入門
+description: PyTorch入門
 ---
 
 # Hello, PyTorch
@@ -178,12 +178,4 @@ x = x.to(device)
 
 
 `一通り`PyTorch`の使い方を学んだので次から早速ニューラルネットを実装してみましょう`
-
-\`\`
-
-\`\`
-
-
-
-
 
