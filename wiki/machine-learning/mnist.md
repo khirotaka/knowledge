@@ -82,8 +82,10 @@ def fit(net, opt, criterion, loader, epochs):
     net = net.to(device)
     
     for epoch in range(epochs):
-        for step, (data, label) in enumerate(loader):
-            data = data.view(-1, in_size).to(data)
+        for data, label in loader:
+            data = data.view(-1, in_size)
+            
+            data = data.to(data)
             label = label.to(data)
 
             opt.zero_grad()
@@ -102,11 +104,63 @@ model = fit(model, optimizer, nn.CrossEntropyLoss(), train_loader, epochs=10)
 
 ```
 
+`fit()関数について解説していきます。まず一行目の`
+
+```python
+torch.device("cuda" torch.cuda.is_available() else "cpu")
+```
+
+は、GPUが利用可能な場合 `"cuda"` が選択されCPUのみの場合 `"cpu"` が選択されます。この結果は、
+
+```python
+net = net.to(device)
+```
+
+`や`
+
+```python
+data = data.to(data)
+label = label.to(data)
+```
+
+で利用されます。  
+では、 `for の中身を見ていきましょう。`
+
+```python
+data = data.view(-1, in_size)
+```
+
+は今回用いるネットワークが全結合層で構成されている為、入力は `[samples, features]` の２次元配である必要がある為、元々の形状 `[samples, channels, features]` から変更しています。
+
+### `評価`
+
+では学習したネットワークの性能を評価してみましょう。
+
+```python
+def evaluate(net, loader)
+    device = torch.device("cuda" torch.cuda.is_available() else "cpu")
+    net = net.eval()
+    
+    correct = 0
+    total = 0
+    
+    with torch.no_grad():
+        for data, labels in loader:
+            data = data.to(device)
+            labels = labels.to(device)
+            
+            outputs = net(data)
+            _, pred = torch.max(outputs, 1)
+            total += labels.shape(0)
+            correct += (predicted == labels).sum().item()
+            
+    print("Accuracy: {:.4%}".format(correct / total))
+
+```
 
 
 
 
-\`\`
 
 \`\`
 
