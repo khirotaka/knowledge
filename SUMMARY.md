@@ -7,6 +7,7 @@
     * [MNIST](wiki/machine-learning/mnist.md)
     * [RNN](wiki/machine-learning/rnn.md)
   * [Unix/Linux](wiki/unix-linux/README.md)
+    * [Install Linux](wiki/unix-linux/install-linux.md)
     * [Hello, Unix/Linux](wiki/unix-linux/hello-unix-linux.md)
     * [Docker for ML Experiments](wiki/unix-linux/docker-for-ml-experiments.md)
   * [Manage ML Experiments](wiki/manage-ml-experiments/README.md)
