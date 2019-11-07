@@ -25,14 +25,16 @@ user@machine:~$ ls
 と入力してください。すると、
 
 ```bash
-user@machine:~$ lsDocuments/    Downloads/    Desktop/    ....
+user@machine:~$ ls
+Documents/    Downloads/    Desktop/    ....
 ```
 
 といった結果が出てくるはずです。\(環境によっては日本語で表示されることがあります\)  
 では、`Documents` ディレクトリに移ってみましょう。
 
 ```bash
-user@machine:~$ lsDocuments/    Downloads/    Desktop/    ....
+user@machine:~$ ls
+Documents/    Downloads/    Desktop/    ....
 user@machine:~$ cd Documents/
 user@machine:~/Documents$ 
 ```
