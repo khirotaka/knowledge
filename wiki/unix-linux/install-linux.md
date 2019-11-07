@@ -89,8 +89,8 @@ curl -sSL https://get.docker.com/rootless | sh
 # WARN: dockerd is not in your current PATH or pointing to /home/user/bin/dockerd
 # Make sure the following environment variables are set (or add then to ~/.bashrc):
 
-export PATH=/home/user/bin:$PATHexport 
-DOCKER_HOST=unix:///run/user/1000/docker.sock
+export PATH=/home/user/bin:$PATH
+export DOCKER_HOST=unix:///run/user/1000/docker.sock
 
 #
 # To control docker service run:
