@@ -15,18 +15,15 @@ description: MNISTで始める画像分類モデル
 まずは使うライブラリを読み込みましょう。
 
 ```python
-import torch
-import torch.nn as nn
+import torchimport torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader
-
 from torchvision.datasets import MNIST
 from torchvision.transforms import ToTensor
 
 
 train_ds = MNIST("./data", train=True, download=True, transform=ToTensor())
 test_ds = MNIST("./data", train=False, download=True, transform=ToTensor())
-
 train_loader = DataLoader(train_ds, batch_size=64, shuffle=True)
 test_loader = DataLoader(test_ds, batch_size=64, shuffle=False)
 
@@ -43,13 +40,12 @@ n_class = 10
 in_size = 28 * 28
 
 model = nn.Sequential(
-            nn.Linear(in_size, 512),
-            nn.ReLU(),
-            nn.Linear(512, 256),
-            nn.ReLU(),
-            nn.Linear(256, n_class)
-        )
-
+    nn.Linear(in_size, 512),
+    nn.ReLU(),
+    nn.Linear(512, 256),
+    nn.ReLU(),
+    nn.Linear(256, n_class)
+)
 ```
 
 ここでいくつか新しい用語が出てきたので解説します。
@@ -78,30 +74,27 @@ $$
 
 ```python
 def fit(net, opt, criterion, loader, epochs):
-    device = torch.device("cuda" torch.cuda.is_available() else "cpu")
-    net = net.to(device)
-    
-    for epoch in range(epochs):
-        for data, label in loader:
-            data = data.view(-1, in_size)
-            
-            data = data.to(data)
+    device = torch.device("cuda" torch.cuda.is_available() else "cpu")    
+    net = net.to(device)        
+    for epoch in range(epochs):        
+        for data, label in loader:            
+            data = data.view(-1, in_size)                        
+            data = data.to(data)            
             label = label.to(data)
-
-            opt.zero_grad()
-            output = net(data)
-            loss = criterion(output, label)
-            loss.backward()
-            opt.step()
-
-        print("{}/{} - loss: {:.4f}".format(epoch+1, epochs, loss.cpu().item()))
-
+                        
+            opt.zero_grad()            
+            output = net(data)            
+            loss = criterion(output, label)            
+            
+            loss.backward()            
+            opt.step()   
+                 
+    print("{}/{} - loss: {:.4f}".format(epoch+1, epochs, loss.cpu().item()))    
     return net
 
 
 optimizer = optim.Adam(model.parameters())
 model = fit(model, optimizer, nn.CrossEntropyLoss(), train_loader, epochs=10)
-
 ```
 
 `fit()関数について解説していきます。まず一行目の`
@@ -137,25 +130,23 @@ data = data.view(-1, in_size)
 では学習したネットワークの性能を評価してみましょう。
 
 ```python
-def evaluate(net, loader)
+def evaluate(net, loader):
     device = torch.device("cuda" torch.cuda.is_available() else "cpu")
-    net = net.eval()
+    net = net.eval()        
+    correct = 0    
+    total = 0        
     
-    correct = 0
-    total = 0
-    
-    with torch.no_grad():
-        for data, labels in loader:
-            data = data.to(device)
-            labels = labels.to(device)
+    with torch.no_grad():        
+        for data, labels in loader:            
+            data = data.to(device)            
+            labels = labels.to(device)    
+                                
+            outputs = net(data)            
+            _, pred = torch.max(outputs, 1)            
+            total += labels.shape(0)            
+            correct += (predicted == labels).sum().item()                
             
-            outputs = net(data)
-            _, pred = torch.max(outputs, 1)
-            total += labels.shape(0)
-            correct += (predicted == labels).sum().item()
-            
-    print("Accuracy: {:.4%}".format(correct / total))
-
+        print("Accuracy: {:.4%}".format(correct / total))
 ```
 
 

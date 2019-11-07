@@ -25,16 +25,14 @@ user@machine:~$ ls
 と入力してください。すると、
 
 ```bash
-user@machine:~$ ls
-Documents/    Downloads/    Desktop/    ....
+user@machine:~$ lsDocuments/    Downloads/    Desktop/    ....
 ```
 
 といった結果が出てくるはずです。\(環境によっては日本語で表示されることがあります\)  
 では、`Documents` ディレクトリに移ってみましょう。
 
 ```bash
-user@machine:~$ ls
-Documents/    Downloads/    Desktop/    ....
+user@machine:~$ lsDocuments/    Downloads/    Desktop/    ....
 user@machine:~$ cd Documents/
 user@machine:~/Documents$ 
 ```
@@ -95,9 +93,7 @@ mv 対象ファイル 移動先
 移動していることを確認してみましょう。
 
 ```bash
-user@machine:~/Documents/hello$ ls    # <- 存在しない
-user@machine:~/Documents/hello$ cd ../
-user@machine:~/Documents$ ls    # <- 存在する
+user@machine:~/Documents/hello$ ls    # <- 存在しないuser@machine:~/Documents/hello$ cd ../user@machine:~/Documents$ ls    # <- 存在する
 ```
 
 ではこのファイルを複製してみましょう。

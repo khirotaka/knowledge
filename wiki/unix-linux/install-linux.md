@@ -72,8 +72,7 @@ VirtualBoxのメニューにある `Devices` から `Insert Guest Additions CD i
 
 ```bash
 sudo apt-get update && apt-get install -y curl
-cat << EOF | sudo sh -x
-apt-get install -y uidmap
+cat << EOF | sudo sh -x apt-get install -y uidmap
 EOF
 ```
 
@@ -90,8 +89,8 @@ curl -sSL https://get.docker.com/rootless | sh
 # WARN: dockerd is not in your current PATH or pointing to /home/user/bin/dockerd
 # Make sure the following environment variables are set (or add then to ~/.bashrc):
 
-export PATH=/home/user/bin:$PATH
-export DOCKER_HOST=unix:///run/user/1000/docker.sock
+export PATH=/home/user/bin:$PATHexport 
+DOCKER_HOST=unix:///run/user/1000/docker.sock
 
 #
 # To control docker service run:
@@ -103,16 +102,15 @@ export DOCKER_HOST=unix:///run/user/1000/docker.sock
 
 ```bash
 cat << EOF >> ~/.bashrc
-export PATH=/home/user/bin:$PATH
-export DOCKER_HOST=unix:///run/user/1000/docker.sock
+export PATH=/home/user/bin:$PATHexport 
+DOCKER_HOST=unix:///run/user/1000/docker.sock
 EOF
 ```
 
 その後、次のコマンドを入力してください。
 
 ```bash
-source ~/.bashrc
-systemclt --user start docker
+source ~/.bashrcsystemclt --user start docker
 ```
 
 これでDockerがインストールできたはずです。早速使ってみましょう。
