@@ -15,7 +15,8 @@ description: MNISTで始める画像分類モデル
 まずは使うライブラリを読み込みましょう。
 
 ```python
-import torchimport torch.nn as nn
+import torch
+import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader
 from torchvision.datasets import MNIST
