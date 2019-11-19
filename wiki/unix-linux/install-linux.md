@@ -72,7 +72,8 @@ VirtualBoxのメニューにある `Devices` から `Insert Guest Additions CD i
 
 ```bash
 sudo apt-get update && apt-get install -y curl
-cat << EOF | sudo sh -x apt-get install -y uidmap
+cat << EOF | sudo sh -x 
+apt-get install -y uidmap
 EOF
 ```
 
@@ -111,7 +112,7 @@ EOF
 
 ```bash
 source ~/.bashrc
-systemclt --user start docker
+systemctl --user start docker
 ```
 
 これでDockerがインストールできたはずです。早速使ってみましょう。
