@@ -110,7 +110,8 @@ EOF
 その後、次のコマンドを入力してください。
 
 ```bash
-source ~/.bashrcsystemclt --user start docker
+source ~/.bashrc
+systemclt --user start docker
 ```
 
 これでDockerがインストールできたはずです。早速使ってみましょう。
