@@ -103,8 +103,8 @@ export DOCKER_HOST=unix:///run/user/1000/docker.sock
 
 ```bash
 cat << EOF >> ~/.bashrc
-export PATH=/home/user/bin:$PATH
-export DOCKER_HOST=unix:///run/user/1000/docker.sock
+export PATH=/home/$USER/bin:$PATH
+export DOCKER_HOST=unix:///run/$USER/1000/docker.sock
 EOF
 ```
 
