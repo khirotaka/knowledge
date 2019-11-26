@@ -6,6 +6,7 @@
     * [Hello, PyTorch](wiki/machine-learning/hello-pytorch.md)
     * [MNIST](wiki/machine-learning/mnist.md)
     * [RNN](wiki/machine-learning/rnn.md)
+    * [Transformer](wiki/machine-learning/Transformer.md)
   * [Unix/Linux](wiki/unix-linux/README.md)
     * [Install Linux](wiki/unix-linux/install-linux.md)
     * [Hello, Unix/Linux](wiki/unix-linux/hello-unix-linux.md)
