@@ -83,6 +83,8 @@ print(something.bar)
 
 これで、分かるはず。
 
+GitHubでシンタックスハイライトされる言語の一覧は[**ここ**](https://github.com/github/linguist/blob/master/lib/linguist/languages.yml)を参照してください。
+
 また、`このように` 文中に書きたい場合は、**バッククオート\( \` \)** で単語を囲めばOKです。
 
 ```text
