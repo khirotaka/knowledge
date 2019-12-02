@@ -2,6 +2,8 @@
 
 * [Home](README.md)
 * [Wiki](wiki/README.md)
+  * [Programming](wiki/programming/README.md)
+    * [Markdown](wiki/programming/markdown.md)
   * [Machine Learning](wiki/machine-learning/README.md)
     * [Hello, PyTorch](wiki/machine-learning/hello-pytorch.md)
     * [MNIST](wiki/machine-learning/mnist.md)
