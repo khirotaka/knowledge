@@ -9,7 +9,7 @@ GitHubなどでコードを見ていると、`README.md` というような形�
 ## 見出し
 
 WordやPagesでは、該当箇所を選択して見出し・小見出しを設定しますが、Markdowndでは、`#` で指定します。  
-実際に試してみましょう。[https://gist.github.com/](https://gist.github.com/) にアクセスして、 `HelloMarkdown.md` と言うファイル名を付け、次の文を入力してみてください。
+実際に試してみましょう。[https://gist.github.com/](https://gist.github.com/) にアクセスして、 `HelloMarkdown.md` と言うファイル名を付け、次の文を入力してみてください。`.md` がMarkdownファイルの拡張子です。
 
 ![](../../.gitbook/assets/gist.png)
 
