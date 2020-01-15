@@ -3,6 +3,8 @@
 * [Home](README.md)
 * [Wiki](wiki/README.md)
   * [Programming](wiki/programming/README.md)
+    * [C++](wiki/programming/c++/README.md)
+      * [xtensor](wiki/programming/c++/xtensor.md)
     * [Markdown](wiki/programming/markdown.md)
   * [Machine Learning](wiki/machine-learning/README.md)
     * [Hello, PyTorch](wiki/machine-learning/hello-pytorch.md)
